@@ -3,13 +3,13 @@ $t = $_POST['t'];
 
 // Connect to MySQL
 // Change the username, password and hostname in the function mysql_connect as per your configuration
-$link = mysql_connect('localhost', 'kaustav', 'kaustav');
+$link = mysql_connect(servername, username, password);
 if (!$link) {
     die('Could not connect: ' . mysql_error());
 }
 
 // Make my_db the current database
-$db_selected = mysql_select_db('projects', $link);
+$db_selected = mysql_select_db(databasename, $link);
 
 // Create tables
 $query2="create table IF NOT EXISTS p_a_j (SCRAP char(50))";
